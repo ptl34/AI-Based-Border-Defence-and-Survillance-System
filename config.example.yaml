@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────────────────────────
+#  Border Surveillance AI — Configuration Template
+#  Copy this file to config.yaml and fill in your credentials.
+#  NEVER commit config.yaml to GitHub (it's in .gitignore).
+# ─────────────────────────────────────────────────────────────────
+
+# ── Azure Blob Storage ───────────────────────────────────────────
+azure:
+  blob_connection_string: "DefaultEndpointsProtocol=https;AccountName=YOUR_ACCOUNT;AccountKey=YOUR_KEY;EndpointSuffix=core.windows.net"
+  blob_containers:
+    videos:   "surveillance-videos"
+    frames:   "processed-frames"
+    logs:     "alert-logs"
+
+  # ── Azure Cosmos DB ────────────────────────────────────────────
+  cosmos_endpoint:  "https://YOUR_ACCOUNT.documents.azure.com:443/"
+  cosmos_key:       "YOUR_COSMOS_PRIMARY_KEY"
+  cosmos_database:  "surveillance_db"
+  cosmos_container: "alerts"
+
+  # ── Azure Computer Vision (optional) ──────────────────────────
+  cv_endpoint: "https://YOUR_REGION.api.cognitive.microsoft.com/"
+  cv_key:      "YOUR_COMPUTER_VISION_KEY"
+
+# ── Model Paths ──────────────────────────────────────────────────
+model:
+  yolo_weights:          "models/yolov8_border.pt"
+  isolation_forest:      "models/isolation_forest.pkl"
+  random_forest:         "models/random_forest.pkl"
+  scaler:                "models/scaler.pkl"
+  yolo_confidence:       0.3      # YOLO detection confidence floor
+  anomaly_threshold_high: 0.7     # score > 0.7  → HIGH priority alert
+  anomaly_threshold_med:  0.4     # score > 0.4  → MEDIUM priority alert
+  fp_filter_threshold:    0.5     # detections below this are dropped
+
+# ── Video / Frame Settings ────────────────────────────────────────
+video:
+  fps_extract:  1          # frames extracted per second
+  frame_width:  640
+  frame_height: 640
+  processed_dir: "data/processed"
+
+# ── Alert & Notification ─────────────────────────────────────────
+alert:
+  db_path:          "alerts.db"
+  sendgrid_api_key: "SG.YOUR_SENDGRID_API_KEY"
+  from_email:       "alerts@yourdomain.com"
+  to_email:         "equalsign610@gmail.com"
+  send_for_priority: ["HIGH"]    # Only send email for HIGH alerts
+
+# ── Logging ──────────────────────────────────────────────────────
+logging:
+  level:    "INFO"
+  log_file: "results/pipeline.log"

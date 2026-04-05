@@ -1,0 +1,5 @@
+Metric,Value,Target,Pass
+mAP@50,0.0408,>0.88,❌
+mAP@50-95,0.015,>0.60,❌
+Precision,0.0179,>0.85,❌
+Recall,0.1914,>0.85,❌

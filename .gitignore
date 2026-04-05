@@ -1,0 +1,72 @@
+# ─── Secrets & Credentials (NEVER commit these) ──────────────────
+config.yaml
+.env
+*.pem
+*.key
+
+# ─── Python ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pt
+
+# ─── Jupyter ─────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── Large Data / Model Files (use Git LFS or skip) ──────────────
+data/raw/
+data/processed/train/
+data/processed/val/
+data/processed/test/
+models/*.pt
+models/*.pkl
+models/*.h5
+*.tgz
+*.zip
+*.tar.gz
+
+# ─── Results / Generated ─────────────────────────────────────────
+results/screenshots/
+*.mp4
+*.avi
+
+# ─── Azure Functions local settings ──────────────────────────────
+azure/functions/local.settings.json
+
+# ─── OS ──────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ─────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ─── Logs ────────────────────────────────────────────────────────
+*.log
+alerts.db
+
+# YOLO training runs (very large)
+notebooks/runs/
+runs/
+"@ | Out-File -FilePath .gitignore -Encoding utf8
+
+# Results (large images)
+results/screenshots/
+results/charts/
+data/processed/
+data/to_annotate/
+results/charts/

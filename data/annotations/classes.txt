@@ -1,0 +1,4 @@
+person
+vehicle
+weapon
+suspicious_object

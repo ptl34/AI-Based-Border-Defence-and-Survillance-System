@@ -1,0 +1,61 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  Border Surveillance AI — Docker Compose
+#
+#  Services:
+#    pipeline   — run_pipeline.py on a sample video
+#    dashboard  — Streamlit web dashboard (http://localhost:8501)
+#
+#  Start dashboard only:
+#      docker-compose up dashboard
+#
+#  Run pipeline on sample video:
+#      docker-compose run --rm pipeline
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── 1. Surveillance Pipeline ───────────────────────────────────────────────
+  pipeline:
+    build: .
+    image: border-surveillance-ai
+    container_name: surveillance_pipeline
+    command: >
+      python src/run_pipeline.py
+        --video data/sample/test_video.mp4
+        --config config.yaml
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./config.yaml:/app/config.yaml:ro
+      - ./alerts.db:/app/alerts.db
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: "no"
+
+  # ── 2. Streamlit Dashboard ─────────────────────────────────────────────────
+  dashboard:
+    build: .
+    image: border-surveillance-ai
+    container_name: surveillance_dashboard
+    command: >
+      streamlit run dashboard/streamlit_app.py
+        --server.port=8501
+        --server.address=0.0.0.0
+        --server.headless=true
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./alerts.db:/app/alerts.db
+      - ./results:/app/results
+    environment:
+      - ALERTS_DB_PATH=/app/alerts.db
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

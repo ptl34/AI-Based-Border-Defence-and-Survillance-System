@@ -1,0 +1,10 @@
+path: F:\b\Border-Surveillance-Project\data\processed\yolo_annotated
+train: train/images
+val: val/images
+test: test/images
+nc: 4
+names:
+  0: person
+  1: vehicle
+  2: weapon
+  3: suspicious_object
