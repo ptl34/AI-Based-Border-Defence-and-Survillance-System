@@ -1,2 +1,2 @@
 optimal_threshold,fpr_at_threshold,roc_auc,accuracy,total_samples,datasets_used
-0.35,0.0,1.0,0.9928,920,"DOTA, UCF-Abuse, UCF-Arrest, UCF-Arson, UCF-Assault, UCF-Burglary, UCF-Explosion, UCF-Fighting, UCF-NormalVideos, UCF-RoadAccidents, UCF-Robbery, UCF-Shooting, UCF-Shoplifting, UCF-Stealing, UCF-Vandalism"
+0.7499999999999999,0.0,0.9897,0.9783,920,"DOTA, UCF-Abuse, UCF-Arrest, UCF-Arson, UCF-Assault, UCF-Burglary, UCF-Explosion, UCF-Fighting, UCF-NormalVideos, UCF-RoadAccidents, UCF-Robbery, UCF-Shooting, UCF-Shoplifting, UCF-Stealing, UCF-Vandalism"

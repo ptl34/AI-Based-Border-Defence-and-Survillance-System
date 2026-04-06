@@ -112,8 +112,8 @@ Border-Surveillance-Project/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/jainilgupta02/Border-Surveillance-Project
-cd Border-Surveillance-Project
+git clone https://github.com/ptl34/AI-Based-Border-Defence-and-Survillance-System
+cd AI-Based Border Defence and Survillance System
 
 # 2. Create virtual environment
 python -m venv venv

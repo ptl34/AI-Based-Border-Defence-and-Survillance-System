@@ -1,1 +1,2 @@
-
+source,n,accuracy,fpr,auc
+DOTA,80,0.888,0.818,0.967

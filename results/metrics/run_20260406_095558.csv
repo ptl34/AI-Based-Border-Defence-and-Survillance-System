@@ -1,0 +1,11 @@
+file,category,persons,vehicles,weapons,total,conf,score,priority,ms
+cvat_cvat_cvat_cvat_frame_0001.jpg,test,0,0,0,0,0.3,0.807,HIGH,290.9
+cvat_cvat_cvat_cvat_frame_0006.jpg,test,1,0,0,1,0.475,0.79,HIGH,168.1
+cvat_cvat_cvat_cvat_frame_0007.jpg,test,1,0,0,1,0.272,0.802,HIGH,181.5
+cvat_cvat_cvat_cvat_frame_0008.jpg,test,0,0,0,0,0.3,0.843,HIGH,171.0
+cvat_cvat_cvat_cvat_frame_0014.jpg,test,0,0,0,0,0.3,0.807,HIGH,181.2
+cvat_cvat_cvat_cvat_frame_0015.jpg,test,0,0,0,0,0.3,0.805,HIGH,172.5
+cvat_cvat_cvat_cvat_frame_0017.jpg,test,0,0,0,0,0.3,0.807,HIGH,175.8
+cvat_cvat_cvat_cvat_frame_0071.jpg,test,0,0,0,0,0.3,0.846,HIGH,174.2
+cvat_cvat_cvat_dt_P0019.jpg,test,0,13,0,39,0.402,0.77,HIGH,185.4
+cvat_cvat_cvat_dt_P0027.jpg,test,0,0,0,10,0.514,0.703,HIGH,178.8
